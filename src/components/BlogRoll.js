@@ -1,4 +1,5 @@
 import React from "react";
+import cx from "classnames";
 import PropTypes from "prop-types";
 import { Link, graphql, StaticQuery } from "gatsby";
 import PreviewCompatibleImage from "./PreviewCompatibleImage";
@@ -14,9 +15,12 @@ const BlogRoll = props => {
         posts.map(({ node: post }) => (
           <div className="is-parent column is-4" key={post.id}>
             <article
-              className={`blog-list-item tile is-child box notification ${
-                post.frontmatter.featuredpost ? "is-featured" : ""
-              }`}
+              className={cx(
+                `blog-list-item tile ${
+                  post.frontmatter.featuredpost ? "is-featured" : ""
+                }`,
+                styles.postCard
+              )}
             >
               <header className={styles.postHeader}>
                 {post.frontmatter.featuredimage ? (
@@ -29,27 +33,23 @@ const BlogRoll = props => {
                     />
                   </div>
                 ) : null}
-                <p className="post-meta">
-                  <Link
-                    className="title has-text-primary is-size-4"
-                    to={post.fields.slug}
-                  >
+                <div className={styles.postMeta}>
+                  <Link className="is-size-5" to={post.fields.slug}>
                     {post.frontmatter.title}
                   </Link>
-                  <span> &bull; </span>
-                  <span className="subtitle is-size-5 is-block">
-                    {post.frontmatter.date}
-                  </span>
-                </p>
+                  <span className="is-block">{post.frontmatter.date}</span>
+                </div>
               </header>
-              <p>
+              <p className={styles.postBody}>
                 {post.excerpt}
                 <br />
                 <br />
-                <Link className="button" to={post.fields.slug}>
-                  Keep Reading →
-                </Link>
               </p>
+              <div className={styles.postFooter}>
+                <Link className="button is-text" to={post.fields.slug}>
+                  - Read more
+                </Link>
+              </div>
             </article>
           </div>
         ))}

@@ -3,6 +3,7 @@ import cx from "classnames";
 import Layout from "../../components/Layout";
 import BlogRoll from "../../components/BlogRoll";
 import styles from "./BlogIndexPage.module.scss";
+import BlogCarousel from "../../components/BlogCarousel";
 
 const scrollToRef = ref => window.scrollTo(0, ref.current.offsetTop);
 
@@ -12,30 +13,21 @@ const BlogIndexPage = () => {
 
   return (
     <Layout>
-      <div
-        className={cx("full-width-image-container margin-top-0", styles.hero)}
-        style={{
-          backgroundImage: `url('/img/blog-index.jpg')`
-        }}
-      >
-        <h1
-          className="has-text-weight-bold is-size-1"
-          style={{
-            boxShadow: "0.5rem 0 0 #f40, -0.5rem 0 0 #f40",
-            backgroundColor: "#f40",
-            color: "white",
-            padding: "1rem"
-          }}
-        >
-          Bazo Latest Posts
-        </h1>
-        <button onClick={executeScroll}> Click to scroll </button>
-      </div>
+      <BlogCarousel onScroll={executeScroll} />
       <section className="section" ref={myRef}>
         <div className="container">
+          <p className={styles.sectionTitle}>Latest Articles</p>
           <div className="content">
             <BlogRoll />
           </div>
+        </div>
+        <div
+          className="content"
+          style={{ display: "flex", justifyContent: "center" }}
+        >
+          <button className={cx("button", styles.loadMoreButton)} type="button">
+            More articles
+          </button>
         </div>
       </section>
     </Layout>

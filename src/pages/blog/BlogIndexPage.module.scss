@@ -1,3 +1,16 @@
-.hero {
-  height: 100vh;
+.sectionTitle {
+  width: 100%;
+  font-size: 2rem;
+  padding: 0 2rem 3rem;
+  color: #6577f1;
+  display: flex;
+  justify-content: center;
+}
+
+.loadMoreButton {
+  margin: 1rem auto;
+  padding: 0 2rem !important;
+  background: #6577f1;
+  color: white;
+  border-radius: 25px;
 }
