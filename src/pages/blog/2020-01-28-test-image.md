@@ -8,4 +8,8 @@ featuredimage: /img/food.jpg
 tags:
   - image
 ---
-some post
+some post 
+
+![food](/img/food.jpg "food")
+
+![coffee](/img/blog-index.jpg "coffee")
