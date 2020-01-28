@@ -1,0 +1,59 @@
+.postCard {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0.5em 1em -0.125em rgba(43, 37, 35, 0.1),
+    0 0px 0 1px rgba(43, 37, 35, 0.02);
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem;
+  justify-content: flex-start;
+  height: 500px;
+
+  .postHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    a {
+      color: #363636;
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.125;
+      word-break: break-word;
+    }
+
+    .postMeta {
+      padding: 1.5rem 1.5rem 0.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  }
+
+  .postBody {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+    flex-shrink: 1;
+    overflow-y: hidden;
+  }
+
+  .postFooter {
+    padding: 0rem 1.5rem 1rem;
+    display: flex;
+    justify-content: flex-start;
+    font-weight: 600;
+    margin-top: auto;
+    margin-bottom: 0;
+
+    a {
+      text-decoration: none !important;
+      color: #1183ff;
+
+      &:hover {
+        color: rgb(16, 81, 151);
+        background: none;
+      }
+    }
+  }
+}

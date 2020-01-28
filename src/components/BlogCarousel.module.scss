@@ -1,0 +1,203 @@
+.hero {
+  height: calc(100vh - 50px);
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  position: relative;
+  background-size: cover;
+  background-position: bottom;
+
+  .heroBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  .carouselNavButton {
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 2rem;
+    color: white;
+    background: none;
+    border: none;
+    outline: none;
+  }
+
+  .carouselContainer {
+    flex-grow: 1;
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+    padding: 2rem 8rem;
+
+    .innerContainer {
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      .postMeta {
+        & a {
+          color: white !important;
+          font-size: 2rem;
+          font-weight: 700;
+
+          &:hover {
+            background: #ffffff33;
+          }
+        }
+      }
+
+      .postBody {
+        color: white !important;
+        margin: 0.5rem 0 0;
+        font-size: 1rem;
+      }
+
+      .postFooter {
+        & a {
+          color: white !important;
+          margin: 0 0 0.5rem 0;
+          font-size: 1rem;
+          text-decoration: none;
+
+          &:hover {
+            background: #ffffff33;
+          }
+        }
+      }
+
+      .subCarousel {
+        display: flex;
+        justify-content: space-between;
+        min-height: 150px;
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none !important;
+        position: relative;
+        margin-bottom: 0;
+        margin-top: auto;
+
+        .miniThumbnail {
+          box-shadow: 0 0.5em 1em -0.125em rgba(43, 37, 35, 0.5),
+            0 0px 0 1px rgba(43, 37, 35, 0.02);
+          background: #00000033;
+          width: 30%;
+          flex-shrink: 0;
+          height: 150px;
+          overflow-y: hidden;
+          margin: 1rem;
+          position: relative;
+          border-radius: 5px;
+          padding: 10px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+
+          &:first-of-type {
+            margin-left: 0;
+          }
+
+          .miniBackground {
+            background-color: #00000077;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+          }
+
+          .miniTitle {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: white;
+            margin: 0.5rem 0;
+          }
+
+          .miniExcerpet {
+            font-size: 0.7rem;
+            line-height: 1rem;
+            color: white;
+            max-height: 1rem;
+            overflow-y: hidden;
+          }
+
+          .miniButton {
+            margin-top: auto;
+            margin-bottom: 0;
+            & a {
+              font-size: 0.6rem;
+              color: white;
+              text-decoration: none;
+
+              &:hover {
+                background: #ffffff33;
+              }
+            }
+          }
+        }
+      }
+
+      .pagination {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .paginationDot {
+          background: none;
+          border: none;
+          cursor: pointer;
+          outline: none;
+          color: white;
+          margin: 0 0.5rem 0.5rem;
+        }
+      }
+
+      .scrollButton {
+        margin: 0.5rem auto;
+        background: none;
+        border: solid 1px white;
+        width: 40px;
+        height: 40px;
+        color: white;
+        border-radius: 50%;
+        cursor: pointer;
+        outline: none;
+        animation: jump 0.5s infinite;
+
+        &:hover {
+          background: #ffffff33;
+        }
+      }
+
+      .subCarousel::-webkit-scrollbar {
+        width: 0px; /* Remove scrollbar space */
+        background: transparent; /* Optional: just make scrollbar invisible */
+      }
+    }
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
